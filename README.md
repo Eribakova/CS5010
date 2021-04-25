@@ -1,7 +1,7 @@
 # CS5010
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+[GitHub Logo](/images/logo.png)
+
 
 
 ## BikeShare Data Analysis comarping pre-covid and post-covid
