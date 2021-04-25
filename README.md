@@ -6,8 +6,7 @@ Elina Ribakova
 
 ## BikeShare Data Analysis comarping pre-covid and post-covid
 
-<img src="/bike.png">
-![] (Bike.png)
+<img src="github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
 ### Introduction
 
