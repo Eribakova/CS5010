@@ -4,26 +4,13 @@ Jenny Jang
 Carol Moore
 Elina Ribakova 
 
-Project requirements 
-
-Introduction: Describe your project scenario. Starting out, what did you hope to accomplish/learn?
-
-The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
-
-Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. 
-Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
-
-Results: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
-Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
-
-Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
-
-
 ## BikeShare Data Analysis comparing pre-covid and post-covid
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
 ### Introduction
+
+REQUIRED: Introduction: Describe your project scenario. Starting out, what did you hope to accomplish/learn?
 
 We wanted to explore some idea on how people's social behavior changed with covid. Our focus is on a change of trend in bikesharing. Here are some example questions we thought to find out:
 
@@ -33,6 +20,8 @@ We wanted to explore some idea on how people's social behavior changed with covi
 
 
 ### Introducing our DATASET
+
+REQUIRED: The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
 
 We got our dataset from 'Capital Bikshare', from following website: https://www.capitalbikeshare.com/system-data
 For our project, we concatenated monthly dataset from  February 2019 to March 2021. We then merged in data on COVID-19 cases and deaths since March 2020.
@@ -56,6 +45,14 @@ We use method-based unit testing for our data cleaning part as well as the data 
 
 ### Planned Queries
 
+REQUIRED: Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. 
+Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
+
+REUIRED: Results: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
+Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
+
+
+
 Many cities reported a spike in bicycle sales and bike sharing.  Although public health regulations and concerns may have kept many people confined, many experienced an increase in leisure time or flexibity.  With businesses closed, some turned to outdoor activity for recreation.  In Illinois, the bike share system "set monthly ridership records in August, September, and October, while many bike shops are experiencing unprecedented demand." (Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).  Areas with tourism, such as Washington DC, may have expercienced a similar boom in cycling among residents that was offset by having fewer visitors.  
 
 Our queries focus on comparing bikesharing patterns before March 2020 with patterns afterward.  
@@ -66,6 +63,18 @@ Our queries focus on comparing bikesharing patterns before March 2020 with patte
 4. Is there a difference by town/county?  
 
 
+### Conclusions
+
+REQUIRED: Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
+
+
+### References
+
+In addition to CS5010 class resources we used the following references
+https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
+https://towardsdatascience.com/visualizing-bike-mobility-in-london-using-interactive-maps-for-absolute-beginners-3b9f55ccb59
+https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
+https://towardsdatascience.com/applied-exploratory-data-analysis-the-power-of-visualization-bike-sharing-python-c5b2645c3595
 
 
 
