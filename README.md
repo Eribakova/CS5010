@@ -12,11 +12,15 @@ Elina Ribakova
 
 REQUIRED: Introduction: Describe your project scenario. Starting out, what did you hope to accomplish/learn?
 
-We wanted to explore some idea on how people's social behavior changed with covid. Our focus is on a change of trend in bikesharing. Here are some example questions we thought to find out:
+We wanted to explore how people's social behavior changed with Covid-19, particularly their activity outdoors. Many cities reported a spike in bicycle sales and bike sharing.  In Chicago “unprecedented demand” (*Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated*). 
 
-1. Did the number of trips change from pre-COVID and post-COVID?
-2. Did any COVID even change the bikeshare frequency?
-3. Comparison between suburb area and city area.
+Client Srcum Story: As a public health analyst, I want to see how bike-sharing changed during the COVID-19 pandemic, because it is one indicator of how the public is taking precautions or risks. 
+
+In this project we performed month-to-month comparisons on Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. We focused on the following key questions: 
+
+1. Did the number of trips change from pre-COVID to post-COVID period?
+2. Has COVID changed bikesharing behaviour in other ways?
+3. Has leaisure-related biking increased versus commuting?
 
 
 ### Introducing our DATASET
@@ -71,9 +75,13 @@ REQUIRED: Conclusions: Summarize your findings, explain how these results could 
 ### References
 
 In addition to CS5010 class resources we used the following references
+
 https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
+
 https://towardsdatascience.com/visualizing-bike-mobility-in-london-using-interactive-maps-for-absolute-beginners-3b9f55ccb59
+
 https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
+
 https://towardsdatascience.com/applied-exploratory-data-analysis-the-power-of-visualization-bike-sharing-python-c5b2645c3595
 
 
