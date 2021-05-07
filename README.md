@@ -28,11 +28,14 @@ In this project we performed month-to-month comparisons on Capital Bikeshare rid
 REQUIRED: The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
 
 We got our dataset from 'Capital Bikshare', from following website: https://www.capitalbikeshare.com/system-data
-For our project, we concatenated monthly dataset from  February 2019 to March 2021. We then merged in data on COVID-19 cases and deaths since March 2020.
+In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr  
+
+For our project, we concatenated monthly bikesharing dataset from  February 2019 to March 2021 and then merged in data on COVID-19 cases and deaths since March 2020. 
+
 
 ### Data cleaning
 
-The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis.  For example, column headings and formats differed for files before and after May 2020.  We ran each monthly dataframe through a for-loop to standardize headings, which allowd the files to be concatenated.  Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020.  We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data.  We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations.  After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county.  The breakdown of state is shown below:
+The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. For example, column headings and formats differed for files before and after May 2020.  We ran each monthly dataframe through a for-loop to standardize headings, which allowd the files to be concatenated.  Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020.  We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data.  We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations.  After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county.  The breakdown of state is shown below:
 
  District of Columbia:  4,892,84
  Virginia:  590,687
