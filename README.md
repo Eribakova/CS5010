@@ -35,7 +35,9 @@ For our project, we concatenated monthly bikesharing dataset from  February 2019
 
 ### Data cleaning
 
-The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. For example, column headings and formats differed for files before and after May 2020.  We ran each monthly dataframe through a for-loop to standardize headings, which allowd the files to be concatenated.  Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020.  We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data.  We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations.  After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county.  The breakdown of state is shown below:
+The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We identified missing data, irregular Data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary Data (either data were were not planning to use or repetitive Data), and inconsistent Data ("negative" trip duration). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. 
+
+In the bike share data, column headings and formats differed for files before and after May 2020.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
  District of Columbia:  4,892,84
  Virginia:  590,687
@@ -43,6 +45,7 @@ The data set included numerous inconsistencies and missing values that had to be
  NaN: 119,252
 
 Based on this information we decided to limit the project Virginia only, so that the final dataset consistes of 590,687 bikesharing trips that started in Northern Virginia.
+
 
 ### Testing of our program 
 
