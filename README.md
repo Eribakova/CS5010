@@ -72,7 +72,7 @@ Our queries focus on comparing bikesharing patterns before March 2020 with patte
 3. Are there dips and increases following select public health events and information (e.g., first case reported in State?)
 4. Is there a difference by town/county?  
 
-<img src="https://github.com/Eribakova/CS5010/blob/main/Violin.PNG">
+<img src="https://github.com/Eribakova/CS5010/blob/main/Violin.png">
 
 
 ### Conclusions
