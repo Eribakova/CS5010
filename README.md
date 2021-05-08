@@ -81,9 +81,13 @@ We use method-based unit testing for our data cleaning part as well as the data 
 
 REQUIRED: Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
 
+We used high frequency information on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on VA specifically. We found that the overall usage of bike sharing has dropped off significantly as the rate of infections picked up. It appears that the use began to fall off already in February, even before the official lockdowns, possibly as people began taking precautions ahead of the official announcements.
 
-![image](https://user-images.githubusercontent.com/70774260/117548429-ec8cb680-b002-11eb-823c-434038ea911d.png)
+While it was not surprising that we found that bike sharing related to commuting (as seen by day and time of usage) fell, as more persons were required or opted to work from home, we were surprised to find that leisure related biking has increased. People took longer trips, including during lunchtime or afternoon hours during weekdays and on the weekends. Bike trips originating from parks or tourist attractions also picked up. 
 
+![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
+
+In our future work we would like to improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. 
 
 
 ### References
