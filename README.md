@@ -4,6 +4,8 @@ Jenny Jang
 Carol Moore
 Elina Ribakova 
 
+Github repository: https://github.com/Eribakova/CS5010
+
 ## BikeShare Data Analysis comparing pre-covid and post-covid
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
@@ -27,31 +29,25 @@ In this project we performed month-to-month comparisons on Capital Bikeshare rid
 
 REQUIRED: The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
 
-We got our dataset from 'Capital Bikshare', from following website: https://www.capitalbikeshare.com/system-data
-In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr  
+Our data is monthly on bike sharing data that provided trip data, by time, starting and ending location and address and ID of the starting and ending location station. In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. We got our dataset from 'Capital Bikshare', from following website: https://www.capitalbikeshare.com/system-data. 
+
+In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. 
 
 For our project, we concatenated monthly bikesharing dataset from  February 2019 to March 2021 and then merged in data on COVID-19 cases and deaths since March 2020. 
 
 
 ### Data cleaning
 
-The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We identified missing data, irregular Data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary Data (either data were were not planning to use or repetitive Data), and inconsistent Data ("negative" trip duration). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. 
+The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We identified missing data, irregular data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary Data (data we were not planning to use or repetitive Data), and inconsistent Data ("negative" trip duration). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. 
 
-In the bike share data, column headings and formats differed for files before and after May 2020.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
+In the bike share data, column headings and formats differed for files before and after May 2020. We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
  District of Columbia:  4,892,84
  Virginia:  590,687
  Maryland: 135,035
  NaN: 119,252
 
-Based on this information we decided to limit the project Virginia only, so that the final dataset consistes of 590,687 bikesharing trips that started in Northern Virginia.
-
-
-### Testing of our program 
-
-We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
-* We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
-* We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
+Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in Northern Virginia.
 
 ### Planned Queries
 
@@ -75,9 +71,19 @@ Our queries focus on comparing bikesharing patterns before March 2020 with patte
 <img src="https://github.com/Eribakova/CS5010/blob/main/Violin.png">
 
 
+### Testing of our program 
+
+We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
+* We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
+* We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
+
 ### Conclusions
 
 REQUIRED: Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
+
+
+![image](https://user-images.githubusercontent.com/70774260/117548429-ec8cb680-b002-11eb-823c-434038ea911d.png)
+
 
 
 ### References
