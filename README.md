@@ -53,7 +53,27 @@ Based on this information we decided to limit the project Virginia only, so that
 
 REQUIRED: Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
 
-ER: do we merge this with key results? 
+ER: NEED TO ADD HERE/EDIT
+
+XXXX
+
+![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
+
+XXXX
+
+![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
+
+XXXX 
+
+![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
+
+Raw data had ~48K unique lat  / longs in March 2021 alone…but only 600 stations. Solutions:  
+Clean lat/long by taking average per station. 
+Reduce lat/long to a small table of about 600 unique values vice 5M+ records. 
+Use GEOPY to reverse-code lat-long to get State, County, etc.
+Merge new geographic vars into larger file. 
+
+
 
 ### Key results
 
@@ -80,9 +100,9 @@ People take longer bike rides suggesting that they are riding bikes more for lei
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
 #### *Most frequently used stations are near parks*  
-People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic.
+People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic. This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
-![image](https://user-images.githubusercontent.com/70774260/117550062-139bb600-b00c-11eb-9df7-a416c68b8bdb.png)
+![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
 
 
@@ -115,7 +135,7 @@ In our future work we would like to improve mapping functionality, where we can 
 
 ### References
 
-In addition to CS5010 class resources we used the following references
+In addition to CS5010 class resources we used the following references:
 
 https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
 
