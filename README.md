@@ -51,30 +51,39 @@ Based on this information we decided to limit the project Virginia only, so that
 
 ### Experimental Design
 
-REQUIRED: Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. 
-Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
+REQUIRED: Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
+
+ER: do we merge this with key results? 
 
 ### Key results
 
 REQUIRED: Results: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
 
-## Bike sharing usage us down during COVID-19
-
+#### *Bike sharing usage us down during COVID-19*
 It is not surprising, that bike sharing fell throughout 2020 due to COVID-19. As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions even before official lockdowns were introduced. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117549581-37113180-b009-11eb-8da3-1cbdb78c3b52.png)
 
-## Bike sharing during commuting hours is sharply down
-
+#### *Bike sharing during commuting hours is sharply down*
 Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure
 
 ![image](https://user-images.githubusercontent.com/70774260/117549626-7b043680-b009-11eb-9f79-b39dab864536.png)
 
-## Weekend trips are up meaningfully 
-
+#### *Weekend trips are up meaningfully* 
 The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117549786-5197da80-b00a-11eb-9d30-f5e559121ef0.png)
+
+#### *Duration of trips has increased*  
+People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. 
+
+![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
+
+#### *Most frequently used stations are near parks*  
+People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic.
+
+![image](https://user-images.githubusercontent.com/70774260/117550062-139bb600-b00c-11eb-9df7-a416c68b8bdb.png)
+
 
 
 ### Testing of our program 
