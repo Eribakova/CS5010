@@ -1,7 +1,7 @@
 # CS5010 Final Project
 
-Jenny Jang
-Carol Moore
+Jenny Jang, 
+Carol Moore, 
 Elina Ribakova 
 
 Github repository: https://github.com/Eribakova/CS5010
@@ -84,6 +84,8 @@ REQUIRED: Conclusions: Summarize your findings, explain how these results could 
 We used high frequency information on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on VA specifically. We found that the overall usage of bike sharing has dropped off significantly as the rate of infections picked up. It appears that the use began to fall off already in February, even before the official lockdowns, possibly as people began taking precautions ahead of the official announcements.
 
 While it was not surprising that we found that bike sharing related to commuting (as seen by day and time of usage) fell, as more persons were required or opted to work from home, we were surprised to find that leisure related biking has increased. People took longer trips, including during lunchtime or afternoon hours during weekdays and on the weekends. Bike trips originating from parks or tourist attractions also picked up. 
+
+Public health care officials could use our findings to disseminate information on precautions of using shared resources outdoors during COVID-19. By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion. They could also use this information to place strategically information and sanitizing equipment at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
