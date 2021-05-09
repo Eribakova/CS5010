@@ -18,6 +18,8 @@ Our central analytic question is whether bikesharing declined in Virginia relati
 
 Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that our analysis could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
 
+Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at 
+
 ## Data set
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
