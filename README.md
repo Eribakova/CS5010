@@ -36,7 +36,10 @@ We wanted to examine bike sharing against the backdrop of events and new informa
 
 In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.  
 
-Figure 1.  Example code to standardize headings.
+#### Figure 1.  Standardizing column headings
+![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
+
+#### Figure 2.  Merging Public Health Data
 ![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
 
 
@@ -68,7 +71,7 @@ XXXX
 
 XXXX 
 
-![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
+
 
 Raw data had ~48K unique lat  / longs in March 2021 alone…but only 600 stations. Solutions:  
 Clean lat/long by taking average per station. 
