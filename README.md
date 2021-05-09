@@ -18,36 +18,29 @@ What is the intended audience and what is the best use for our analysis? First, 
 
 Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  (*Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated*). 
 
-In this project we performed month-to-month comparisons on Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. We focused on the following key questions: 
-
-1. Did the number of trips change from pre-COVID to post-COVID period?
-2. Has COVID changed bikesharing behaviour in other ways?
-3. Has leaisure-related biking increased versus commuting?
-
+In this project we performed month-to-month comparisons on Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. Our main question is whether bikesharing declined in DC. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns and restrictions?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.  
 
 ### Data set
 
-REQUIRED: The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
-
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
-Our approach is to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, comparing June 2019 (pre-COVID) to June 2020 (post-COVID).  We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
+Our approach was to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, to compare June 2019 (pre-COVID) to June 2020 (post-COVID).  We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
 
-Each record is a trip from a starting startion to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) for the and end of each trip and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
+Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
 
-In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete the file of 
+We wanted to examine bike sharing against the backdrop of events and new information during the pandemic.  Public health data provided the necessar context. We obtained epidemological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete our file.
 
-## Data cleaning
+## Data Pipeline
 
-###Preprocessing
+### Preprocessing
 
-In order to combine the 25 monthly bike share files into a single data set, we assessed if there were differences in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. 
+In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.
 
-At this early stage, we also examined missing values.  We found that the files dated
+### Cleaning
 
-The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. M, irregular data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary data (data we were not planning to use or repetitive Data), and inconsistent Data (such as column headings differing across the monthly files). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 trends. 
+The bike share data set included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).
 
-In the bike share data, column headings and formats differed for files before and after May 2020. We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
+Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for only 600 stations during March 2021. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
  District of Columbia:  4,892,84
  Virginia:  590,687
@@ -58,7 +51,7 @@ Based on this information we decided to limit the project Virginia only, so that
 
 ### Experimental Design
 
-REQUIRED: Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
+In this section, we discuss how we analyzed the data.  Python code is in the files, 
 
 ER: NEED TO ADD HERE/EDIT
 
