@@ -12,9 +12,11 @@ Github repository: https://github.com/Eribakova/CS5010
 
 ## Objectives
 
-We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even when social distancing was not possible. We examined the public's use of rental bikes to guage how the public took precautions or increased their risks in response to the pandemic. 
+We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even when social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020. We examined the public's use of rental bikes to guage how the public took precautions or increased their risks during course of the pandemic. 
 
 Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if the Washington DC area experienced a similar spike or if public health restrictions and precautions - which led reduced tourism and commuting -- caused a net reduction in usage, mitigating the potential risks of biking on narrow paths and on roads.
+
+Our central analytic question is whether bikesharing declined in Virginia. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns and restrictions?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.   
 
 Our analysis provides an example of how transactional commercial data can be used in urban planning and public health policy.  With regard to the latter, healthcare officials could use our data to assess potential risks associated with outdoor recreational behavior and to tailor interventions in addition to sanitizing equipment (which DC's bikesharing company, Capital Bikeshare, did).  These could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing teh value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. If merited, urban planners could use this information assess which roads might be closed on weekends to promote fitness and recreation, while enabling more social distancing than is possible on trails.  
 
@@ -22,7 +24,7 @@ Our analysis provides an example of how transactional commercial data can be use
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
-Our approach was to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, to compare June 2019 (pre-COVID) to June 2020 (post-COVID).  We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
+OWe downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
 
 Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
 
@@ -60,15 +62,12 @@ Based on this information we decided to limit the project Virginia only, so that
 
 ## Experimental Design
 
-In this section, we discuss how we analyzed the data.  Python code is in the files, 
+In this section, we discuss how we analyzed the data.  The analysis and visualization code is primarily in the file monthtomonth.ipynb.
 
-Our central analytic question is whether bikesharing declined in Virginia. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns and restrictions?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.   There are several confounding factors and limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear. Anecdotally, mask wear was not
+Our approach was to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, to compare June 2019 (pre-COVID) to June 2020 (post-COVID).  
 
+There are several confounding factors and limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear and diversion away from crowded trails to city streets. Anecdotally, mask wear was not common in DC during outdoor exercise particularly in the summer.  Secondly, Capital Bikeshare made free memberships available to essential workers during 2020, an additional source of demand with unknown time-of-day and day-of-week patterns.
 
-We performed pre-post comparisons of Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. 
-
-
-XXXX
 
 
 
@@ -130,24 +129,29 @@ We use method-based unit testing for our data cleaning part as well as the data 
 
 ## Conclusions
 
-REQUIRED: Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
+We used high frequency information on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on VA specifically. We found that the overall usage of bike sharing has dropped off significantly as the rate of infections picked up. It appears that the use began to fall off already in February, even before the official lockdowns, possibly as people began taking precautions ahead of the official announcements.    
 
-We used high frequency information on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on VA specifically. We found that the overall usage of bike sharing has dropped off significantly as the rate of infections picked up. It appears that the use began to fall off already in February, even before the official lockdowns, possibly as people began taking precautions ahead of the official announcements.
+However, after the Virginia's complete lockdown ended in early May, bike sharing continued its seasonal increase even as deaths and hospitalizations escalated, and surpassed the previous year during non-commuting hours and on weekends.  People took longer trips and trips originating from recreational areas also picked up.  Based on this pattern, we concluded that leisure oriented trips increased and substituted for work-related rentals.
 
-While it was not surprising that we found that bike sharing related to commuting (as seen by day and time of usage) fell, as more persons were required or opted to work from home, we were surprised to find that leisure related biking has increased. People took longer trips, including during lunchtime or afternoon hours during weekdays and on the weekends. Bike trips originating from parks or tourist attractions also picked up. 
-
-Public health care officials could use our findings to disseminate information on precautions of using shared resources outdoors during COVID-19. By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion. They could also use this information to place strategically information and sanitizing equipment at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. 
+Public health care officials and urban planners could use our findings to disseminate information on precautions of using shared resources outdoors during COVID-19. By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. They could also use this information to place awareness information at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
-In our future work we would like to improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. 
-
+In our future work we would like to improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would like to study how essential workers took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips that we see in our data.  
 
 ## References
 
 In addition to CS5010 class resources we used the following references:
 
+Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
+
+Kapp, Amy, "Here’s the Latest Expert Guidance on Outdoor Activity and COVID-19," Rails to Trails Conservancy blog post, April 18, 2020, https://www.railstotrails.org/trailblog/2020/april/18/here-s-the-latest-expert-guidance-on-outdoor-activity-and-covid-19/
+
+Dunbar, Harry, "How to Avoid Crowded Trails During COVID-19", BikeArlington blog post, April 24, 2020. https://www.bikearlington.com/how-to-avoid-crowded-trails-during-covid-19/
+
 Data license agreement.  https://www.capitalbikeshare.com/data-license-agreement
+
+Commonwealth of Virginia, "Virginia Open Data Portal:  VDH-COVID-19-PublicUseDataset-Cases", website, https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr
 
 https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
 
@@ -157,6 +161,4 @@ https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
 
 https://towardsdatascience.com/applied-exploratory-data-analysis-the-power-of-visualization-bike-sharing-python-c5b2645c3595
 
-Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
 
-Commonwealth of Virginia, "Virginia Open Data Portal:  VDH-COVID-19-PublicUseDataset-Cases", website, https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr
