@@ -6,11 +6,12 @@ Elina Ribakova
 
 Github repository: https://github.com/Eribakova/CS5010
 
-Relevant Juyter Notebooks:  Datacleaning_Final.ipynb and Analysis_Final.ipynb
+Relevant Juyter Notebooks:  
+Datacleaning_Final.ipynb and Analysis_Final.ipynb
 
 Link to Google Drive with all the Datasets mentioned in the report: https://drive.google.com/drive/folders/1af62oMJvt0VrC8fkSnE-8pq36EJRhDcc?usp=sharing
 
-## Bike-Sharing: Insight into Public Precautions During the COVID-19 Pandemic
+# Bike-Sharing: Insight into Public Precautions During the COVID-19 Pandemic
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
@@ -22,8 +23,7 @@ Our central analytic question is whether bikesharing declined in Virginia relati
 
 Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that our analysis could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
 
-Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at https://drive.google.com/drive/folders/1af62oMJvt0VrC8fkSnE-8pq36EJRhDcc?usp=sharing
-
+Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at 
 
 ## Data set
 
@@ -39,19 +39,17 @@ The Python code for preprocessing and cleaning is in the file Datacleaning_Final
 
 ### Preprocessing
 
-In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not significant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
+In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not significant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. Figures 1 and 2 show the standardization of column headings and the process for merging public health data.
 
-#### Figure 1.  Standardizing column headings
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
 
-#### Figure 2.  Merging Public Health Data
+
 ![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
 
 ### Cleaning
 
-The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).  The data set had street address information but lacked city and state, aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
+The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).  The data set had street address information but lacked city and state (Figure 3), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
-#### Figure 3.  Raw address data
 ![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
 
 We used the Python GEOPY library to extract city and state from the latitude and longitude.  There were several issues which we solved in the following ways.
@@ -83,47 +81,40 @@ The analysis and visualization code, along with additional visualizations, is in
 
 ## Key results
 
-#### *Bike sharing usage us down during COVID-19*
+### Bike sharing usage us down during COVID-19.
 It is not surprising, that bike sharing fell throughout 2020 due to COVID-19. As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions even before official lockdowns were introduced, since trips were lower in February than January 2020. 
 
-#### Figure 4.  COVID-19 events and trip counts compared to 2019
 ![image](https://user-images.githubusercontent.com/70774260/117549581-37113180-b009-11eb-8da3-1cbdb78c3b52.png)
 
-#### *Bike sharing during commuting hours is sharply down*
+### Bike sharing during commuting hours is sharply down.
 Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure.  Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
 
-#### Figure 5.  Trip count by time of day
 ![image](https://user-images.githubusercontent.com/70774260/117549626-7b043680-b009-11eb-9f79-b39dab864536.png)
 
-#### *Weekend trips are up* 
+### Weekend trips are up.
 The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
 
-#### Figure 6.  Trip count by day of week
 ![image](https://user-images.githubusercontent.com/70774260/117549786-5197da80-b00a-11eb-9d30-f5e559121ef0.png)
 
-#### *Duration of trips has increased*  
-People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. 
+### Duration of trips has increased.  
+People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. The distribution of duration by time of day is showin in Figure 7.
 
-#### Figure 7.  Distribution of trip duration, pre- and post-COVID, by time of day
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
-#### *Most frequently used stations are near parks*  
-People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic. This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
+### Most frequently used stations are near parks.  
+People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
 The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Side routes and adjacent trails are also very narrow. Together, our data suggests a need for increased public health precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
 
-#### Figure 8.  Ranking of start stations, pre- and post-COVID
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
-
 
 ## Testing of our program 
 
 We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
 * We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
 * We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
-* We used assert statements to make sure the groupby split-apply-combine result was as intended (note that this approach yields no output if the statement is True).
+* We used assert statements to make sure the groupby split-apply-combine result was as intended (note that this approach yields no output if the statement is True) - examples in Figure 9.
 
-#Figure 9. Example of testing with Assert statements
 ![image](https://user-images.githubusercontent.com/70774260/117549451-755a2100-b008-11eb-8d02-80fb248964ce.png)
 
 
@@ -141,7 +132,6 @@ There are a few technical limitations we would overcome with more time.  For exa
 
 To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
-Figure 10.  Summary
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
 
