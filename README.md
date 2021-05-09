@@ -12,11 +12,11 @@ Github repository: https://github.com/Eribakova/CS5010
 
 ## Objectives
 
-We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even where social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to guage how the public took precautions or increased their risks throughout 2020 to the present. 
+We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even where social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to gauge how the public took precautions or increased their risks throughout 2020 to the present. 
 
 Our central analytic question is whether bikesharing declined in Virginia relative to the previous year. Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if the Washington DC area experienced a similar spike or if public health restrictions and precautions - which led reduced tourism and commuting -- caused a net reduction in usage, mitigating the potential risks of biking on narrow paths and on roads.  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.  
 
-Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that analysis like ours could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
+Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that our analysis could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
 
 ## Data set
 
@@ -24,15 +24,15 @@ We used Capital Bikeshare’s Trip History dataset which is licensed for public 
 
 We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
 
-Public health data provided helpful context for understanding bikesharing trends. We obtained epidemological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete our file.
+Public health data provided helpful context for understanding bikesharing trends. We obtained epidemiological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete our file.
 
 ## Data Pipeline
 
-The Python code for preprocessing and cleaning is in the file datacleaning.ipynb.
+The Python code for preprocessing and cleaning is in the file Datacleaning_Final.ipynb.
 
 ### Preprocessing
 
-In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
+In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not significant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
 
 #### Figure 1.  Standardizing column headings
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
@@ -47,11 +47,11 @@ The merged dataset included numerous irregularities and missing values that had 
 #### Figure 3.  Raw address data
 ![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
 
-We used the Python GEOPY library to extract city and state from the latitutde and longitude.  There were several issues which we solved in the following ways.
+We used the Python GEOPY library to extract city and state from the latitude and longitude.  There were several issues which we solved in the following ways.
 
-1.  Lat/long data were missing from all files dated prior to May 2020.  We created a dictionary to map lat/long to each station where data was avaialble, then used the dictionary to fill in lat/long based on station id. Because the stations did not change much, if at all, during our timeframe, this was possible. 
+1.  Lat/long data were missing from all files dated prior to May 2020.  We created a dictionary to map lat/long to each station where data was available, then used the dictionary to fill in lat/long based on station id. Because the stations did not change much, if at all, during our timeframe, this was possible. 
 
-2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with its average lat/long.  Having cleaned and reduced the data, we easily extracted State and city informaiton.  The breakdown of state is shown below:
+2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with its average lat/long.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is shown below:
 
 District of Columbia:  4,892,84
 Virginia:  590,687
@@ -72,7 +72,7 @@ We planned four main queries:
 3.  How did time of day and day of week change?  Do the shifts reflect changes in commuting, leisure, or both?
 4.  Where did trips change?  Is there a locational pattern to the change?
 
-The analysis and visualization code, along with additional visualizations, is in our Jupyter notebook.  An important coding tool was the Pandas 'groupby' method.  We used groupby to aggregate the data and develop monthly, weekly, daily and hourly counts.  The Seaborn library was also important to our analysis.  Seaborn easily makes bar charts that are useful in 'pre-/post-analysis' because the 'hue' keyword enables dimenstions beyond the x and y axis.  This feature allowed us to incoporate "year" into the charts, enabling clear year-to-year comparisons.
+The analysis and visualization code, along with additional visualizations, is in our Jupyter notebook.  An important coding tool was the Pandas 'groupby' method.  We used groupby to aggregate the data and develop monthly, weekly, daily and hourly counts.  The Seaborn library was also important to our analysis.  Seaborn easily makes bar charts that are useful in 'pre-/post-analysis' because the 'hue' keyword enables dimensions beyond the x and y axis.  This feature allowed us to incorporate "year" into the charts, enabling clear year-to-year comparisons.
 
 ## Key results
 
@@ -130,7 +130,7 @@ Public health officials could use the data to tailor interventions beyond what t
 
 Urban planners could use this information to assess which roads might be closed on weekends to promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
 
-To increase the utility of this analysis, we would improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would like to study how essential workers took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips that we see in our data.  Finally, we would incorporate a user query capability tailored to analysts and officicals who want to keep track of changes.
+To increase the utility of this analysis, we would improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would like to study how essential workers took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips that we see in our data.  Finally, we would incorporate a user query capability tailored to analysts and officials who want to keep track of changes.
 
 Figure 10.  Summary
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
