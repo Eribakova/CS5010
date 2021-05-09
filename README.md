@@ -34,7 +34,11 @@ We wanted to examine bike sharing against the backdrop of events and new informa
 
 ### Preprocessing
 
-In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.
+In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.  
+
+Figure 1.  Example code to standardize headings.
+![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
+
 
 ### Cleaning
 
@@ -57,7 +61,6 @@ ER: NEED TO ADD HERE/EDIT
 
 XXXX
 
-![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
 
 XXXX
 
