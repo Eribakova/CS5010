@@ -10,7 +10,7 @@ Github repository: https://github.com/Eribakova/CS5010
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
-### Introduction
+### Introduction. [NEEDS WORK]
 
 We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors. The vast majority of public health focus during the pandemic was on behavior indoors. 
 
@@ -31,18 +31,21 @@ REQUIRED: The Data: Describe your data set and its significance. Where did you o
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
-We downloaded 25 monthly data files.  Each record is a trip from a starting startion to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) for the and end of each trip and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
+Our approach is to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, comparing June 2019 (pre-COVID) to June 2020 (post-COVID).  We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
 
+Each record is a trip from a starting startion to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) for the and end of each trip and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
 
+In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete the file of 
 
-In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. 
+## Data cleaning
 
-For our project, we concatenated monthly bikesharing dataset from  February 2019 to March 2021 and then merged in data on COVID-19 cases and deaths since March 2020. 
+###Preprocessing
 
+In order to combine the 25 monthly bike share files into a single data set, we assessed if there were differences in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. 
 
-### Data cleaning
+At this early stage, we also examined missing values.  We found that the files dated
 
-The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. We identified missing data, irregular data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary Data (data we were not planning to use or repetitive Data), and inconsistent Data ("negative" trip duration). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 instances. 
+The data set included numerous inconsistencies and missing values that had to be remedied prior to analysis. M, irregular data (mixed formats and outliers, for example trips with over duration spanning multiple days, where likely someone did not return a bike), we dropped columns with unnecessary data (data we were not planning to use or repetitive Data), and inconsistent Data (such as column headings differing across the monthly files). We also needed to merge two datasets: one pertaining to bike share information and another to COVID-19 trends. 
 
 In the bike share data, column headings and formats differed for files before and after May 2020. We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated. Latitude and longitude data, necessary for mapping, were missing for files dated prior to May 2020. We developed a dictionary that mapped station id to lat/long, which we used to interpolate the missing data. We found that lat/long data were not standard, differing in the number of decimal places, resulting in over 48,000 unique lat/longs for only 600 stations. After standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
@@ -109,7 +112,6 @@ People use stations that are near parks or recreational areas. Top 20 most used 
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
 
-
 ### Testing of our program 
 
 REQUIRED: Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
@@ -117,7 +119,7 @@ REQUIRED: Testing: Describe what testing you did. Describe the unit tests that y
 We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
 * We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
 * We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
-* We used assert statements to make sure time groups were correct. 
+* We used assert statements to make sure the groupby split-apply-combine result was as intended.   
 
 ![image](https://user-images.githubusercontent.com/70774260/117549451-755a2100-b008-11eb-8d02-80fb248964ce.png)
 
