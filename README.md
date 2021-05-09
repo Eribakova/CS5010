@@ -112,12 +112,10 @@ The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount V
 
 ## Testing of our program 
 
-REQUIRED: Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
-
 We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
 * We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
 * We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
-* We used assert statements to make sure the groupby split-apply-combine result was as intended.   
+* We used assert statements to make sure the groupby split-apply-combine result was as intended (note that this approach yields no output if the statement is True).
 
 #Figure 9. Example of testing with Assert statements
 ![image](https://user-images.githubusercontent.com/70774260/117549451-755a2100-b008-11eb-8d02-80fb248964ce.png)
