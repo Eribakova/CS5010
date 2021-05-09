@@ -32,7 +32,7 @@ The Python code for preprocessing and cleaning is in the file Datacleaning_Final
 
 ### Preprocessing
 
-In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
+In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not significant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
 
 #### Figure 1.  Standardizing column headings
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
