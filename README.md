@@ -12,7 +12,7 @@ Github repository: https://github.com/Eribakova/CS5010
 
 ## Objectives
 
-We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even when social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020. We examined the public's use of rental bikes to guage how the public took precautions or increased their risks during course of the pandemic. 
+We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many parks were closed throughout the summer. However, recreational pathways remained open even when social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to guage how the public took precautions or increased their risks during course of the pandemic. 
 
 Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if the Washington DC area experienced a similar spike or if public health restrictions and precautions - which led reduced tourism and commuting -- caused a net reduction in usage, mitigating the potential risks of biking on narrow paths and on roads.
 
@@ -90,21 +90,26 @@ REQUIRED: Results: Display and discuss the results. Describe what you have learn
 #### *Bike sharing usage us down during COVID-19*
 It is not surprising, that bike sharing fell throughout 2020 due to COVID-19. As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions even before official lockdowns were introduced. 
 
+#### Figure 4.  COVID-19 events and trip counts compared to 2019
 ![image](https://user-images.githubusercontent.com/70774260/117549581-37113180-b009-11eb-8da3-1cbdb78c3b52.png)
 
 #### *Bike sharing during commuting hours is sharply down*
-Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure
+Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure.  Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
 
+#### Figure 5.  Trip count by time of day
 ![image](https://user-images.githubusercontent.com/70774260/117549626-7b043680-b009-11eb-9f79-b39dab864536.png)
 
 #### *Weekend trips are up* 
-The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. 
+The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
 
+
+#### Figure 6.  Trip count by day of week
 ![image](https://user-images.githubusercontent.com/70774260/117549786-5197da80-b00a-11eb-9d30-f5e559121ef0.png)
 
 #### *Duration of trips has increased*  
 People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. 
 
+#### Figure 7.  Distribution of trip duration, pre- and post-COVID, by time of day
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
 #### *Most frequently used stations are near parks*  
@@ -112,6 +117,7 @@ People use stations that are near parks or recreational areas. Top 20 most used 
 
 The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Side routes and adjacent trails are also very narrow. Together, our data suggests a need for increased public health precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
 
+#### Figure 8.  Ranking of start stations, pre- and post-COVID
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
 
