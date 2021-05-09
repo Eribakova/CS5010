@@ -58,7 +58,7 @@ The data set had street address information but lacked city and state, aggregate
 
 Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in Northern Virginia.
 
-### Experimental Design
+## Experimental Design
 
 In this section, we discuss how we analyzed the data.  Python code is in the files, 
 
@@ -84,7 +84,7 @@ Merge new geographic vars into larger file.
 
 
 
-### Key results
+## Key results
 
 REQUIRED: Results: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
 
@@ -116,7 +116,7 @@ The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount V
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
 
-### Testing of our program 
+## Testing of our program 
 
 REQUIRED: Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
 
@@ -128,7 +128,7 @@ We use method-based unit testing for our data cleaning part as well as the data 
 ![image](https://user-images.githubusercontent.com/70774260/117549451-755a2100-b008-11eb-8d02-80fb248964ce.png)
 
 
-### Conclusions
+## Conclusions
 
 REQUIRED: Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
 
@@ -143,9 +143,11 @@ Public health care officials could use our findings to disseminate information o
 In our future work we would like to improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. 
 
 
-### References
+## References
 
 In addition to CS5010 class resources we used the following references:
+
+Data license agreement.  https://www.capitalbikeshare.com/data-license-agreement
 
 https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
 
@@ -155,6 +157,6 @@ https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
 
 https://towardsdatascience.com/applied-exploratory-data-analysis-the-power-of-visualization-bike-sharing-python-c5b2645c3595
 
-Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).
+Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
 
-
+Commonwealth of Virginia, "Virginia Open Data Portal:  VDH-COVID-19-PublicUseDataset-Cases", website, https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr
