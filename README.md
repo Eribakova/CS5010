@@ -16,25 +16,23 @@ We wanted to explore how people's social behavior changed with COVID-19, particu
 
 Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if the Washington DC area experienced a similar spike or if public health restrictions and precautions - which led reduced tourism and commuting -- caused a net reduction in usage, mitigating the potential risks of biking on narrow paths and on roads.
 
-Our central analytic question is whether bikesharing declined in Virginia. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns and restrictions?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.   
-
-Our analysis provides an example of how transactional commercial data can be used in urban planning and public health policy.  With regard to the latter, healthcare officials could use our data to assess potential risks associated with outdoor recreational behavior and to tailor interventions in addition to sanitizing equipment (which DC's bikesharing company, Capital Bikeshare, did).  These could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing teh value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. If merited, urban planners could use this information assess which roads might be closed on weekends to promote fitness and recreation, while enabling more social distancing than is possible on trails.  
+Our central analytic question is whether bikesharing declined in Virginia relative to the previous year. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns, restrictions and loss of tourism?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.   Based on our findings, we hoped to explore how this data could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that such interventions should be considered.
 
 ## Data set
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
-OWe downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  
+We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
 
-Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
-
-We wanted to examine bike sharing against the backdrop of events and new information during the pandemic.  Public health data provided the necessar context. We obtained epidemological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete our file.
+Public health data provided helpful context for understanding bikesharing trends. We obtained epidemological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. These data were merged in with the bikeshare data to complete our file.
 
 ## Data Pipeline
 
+The Python code for preprocessing and cleaning is in the file datacleaning.ipynb.
+
 ### Preprocessing
 
-In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.  The Python code for preprocessing is in the file datacleaning.ipynb.
+In order to concatenate the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records. Once we standardized our data, we merged in daily COVID case counts by matching dates. 
 
 #### Figure 1.  Standardizing column headings
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
@@ -44,14 +42,17 @@ In order to combine the 25 monthly bike share files into a single data set, we a
 
 ### Cleaning
 
-The bike share data set included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).
+The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).  The data set had street address information but lacked city and state, aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
-The data set had street address information but lacked city and state, aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  We used the Python GEOPY library to extract city and state from the latitutde and longitude.  There were several issues which we solved in the following ways.
+
 
 #### Figure 3.  Raw address data
 ![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
 
-1.  Lat/long data were not standard, differing in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for only 600 stations during March 2021. The reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long to the 6th digit grouped by station id.  standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
+We used the Python GEOPY library to extract city and state from the latitutde and longitude.  There were several issues which we solved in the following ways.
+
+1.  Lat/long data were missing from all files dated prior to May 2020.  
+2.  Lat/long data were not standard, differing in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for only 600 stations during March 2021. The reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long to the 6th digit grouped by station id.  standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
  District of Columbia:  4,892,84
  Virginia:  590,687
@@ -139,7 +140,8 @@ We used high frequency information on bike sharing before and after the onset of
 
 However, after the Virginia's complete lockdown ended in early May, bike sharing continued its seasonal increase even as deaths and hospitalizations escalated, and surpassed the previous year during non-commuting hours and on weekends.  People took longer trips and trips originating from recreational areas also picked up.  Based on this pattern, we concluded that leisure oriented trips increased and substituted for work-related rentals.
 
-Public health care officials and urban planners could use our findings to disseminate information on precautions of using shared resources outdoors during COVID-19. By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. They could also use this information to place awareness information at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. 
+Public health officials could use the data to tailor interventions beyond what the vendor is doing (such as sanitizing high-contact parts of the equipment after use).  They could also use this information to place awareness information at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. iThese could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing teh value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. 
+Urban planners could use this information to assess which roads might be closed on weekends to promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
