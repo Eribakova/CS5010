@@ -166,4 +166,4 @@ https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
 
 https://towardsdatascience.com/applied-exploratory-data-analysis-the-power-of-visualization-bike-sharing-python-c5b2645c3595
 
-
+https://seaborn.pydata.org/generated/seaborn.violinplot.html
