@@ -64,7 +64,7 @@ Based on this information we decided to limit the project Virginia only, so that
 
 Our approach was to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, to compare June 2019 (pre-COVID) to June 2020 (post-COVID).  
 
-There are several analytic limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear and diversion away from crowded trails to city streets. Anecdotally, mask wear was not common in DC during outdoor exercise particularly in the summer.  Secondly, Capital Bikeshare made free memberships available to essential workers during 2020, an additional source of demand with unknown time-of-day and day-of-week patterns. 
+There are several analytic limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear and diversion away from crowded trails to city streets. Anecdotally, mask wear was not common in DC during outdoor exercise particularly in the summer.  Secondly, Capital Bikeshare made free memberships available to essential workers during 2020, an additional source of demand with unknown implications for overall trip count and patterns of use. 
 
 We planned four main queries:
 1.  How did the number of monthly trips change in 2020 compared to 2019?
@@ -90,7 +90,6 @@ Trips for 2020 as a whole shifted from commuting hours to what seems to be leisu
 
 #### *Weekend trips are up* 
 The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
-
 
 #### Figure 6.  Trip count by day of week
 ![image](https://user-images.githubusercontent.com/70774260/117549786-5197da80-b00a-11eb-9d30-f5e559121ef0.png)
@@ -127,13 +126,15 @@ We used high frequency information on bike sharing before and after the onset of
 
 However, after the Virginia's complete lockdown ended in early May, bike sharing continued its seasonal increase even as deaths and hospitalizations escalated, and surpassed the previous year during non-commuting hours and on weekends.  People took longer trips and trips originating from recreational areas also picked up.  Based on this pattern, we concluded that leisure oriented trips increased and substituted for work-related rentals.
 
-Public health officials could use the data to tailor interventions beyond what the vendor is doing (such as sanitizing high-contact parts of the equipment after use).  They could also use this information to place awareness information at the stations that are most frequently used and adjust it accordingly as people return to work and commuting biking begins to return. iThese could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing teh value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. 
+Public health officials could use the data to tailor interventions beyond what the vendor is already doing (sanitizing high-contact parts of the equipment after use). These could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing the value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. 
+
 Urban planners could use this information to assess which roads might be closed on weekends to promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
+
+To increase the utility of this analysis, we would improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would like to study how essential workers took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips that we see in our data.  Finally, we would incorporate a user query capability tailored to analysts and officicals who want to keep track of changes.
 
 Figure 10.  Summary
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
-In our future work we would like to improve mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would like to study how essential workers took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips that we see in our data.  
 
 ## References
 
