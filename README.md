@@ -10,7 +10,7 @@ Github repository: https://github.com/Eribakova/CS5010
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
-### Introduction. [NEEDS WORK]
+## Introduction. [NEEDS WORK]
 
 We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors. The vast majority of public health focus during the pandemic was on behavior indoors. 
 
@@ -20,7 +20,7 @@ Many cities reported a spike in bicycle sales and bike sharing. For example, Chi
 
 In this project we performed month-to-month comparisons on Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. Our main question is whether bikesharing declined in DC. To what extent did the number of trips change?  Did the pandemic foster a boom in demand like in Chicago?  Or, did bikesharing in DC decline in response to public health concerns and restrictions?  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.  
 
-### Data set
+## Data set
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
@@ -34,7 +34,7 @@ We wanted to examine bike sharing against the backdrop of events and new informa
 
 ### Preprocessing
 
-In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.  
+In order to combine the 25 monthly bike share files into a single data set, we assessed if there were inconsistencies in the structure of the files over time.  We found that column headings and formats differed for files before and after May 2020. In most cases, however, the file format differences were not signiificant.  We ran each monthly dataframe through a for-loop to standardize headings, which allowed the files to be concatenated, resulting in a file of over 5.5M records.  The Python code for preprocessing is in the file datacleaning.ipynb.
 
 #### Figure 1.  Standardizing column headings
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
@@ -47,6 +47,9 @@ In order to combine the 25 monthly bike share files into a single data set, we a
 The bike share data set included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).
 
 The data set had street address information but lacked city and state, aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  We used the Python GEOPY library to extract city and state from the latitutde and longitude.  There were several issues which we solved in the following ways.
+
+#### Figure 3.  Raw address data
+![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
 
 1.  Lat/long data were not standard, differing in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for only 600 stations during March 2021. The reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long to the 6th digit grouped by station id.  standardizing the lat/longs, we ran a reverse geocode library, geopy, to extract state and county. The breakdown of state is shown below:
 
@@ -68,7 +71,7 @@ XXXX
 
 XXXX
 
-![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
+
 
 XXXX 
 
