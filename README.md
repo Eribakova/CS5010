@@ -6,17 +6,17 @@ Elina Ribakova
 
 Github repository: https://github.com/Eribakova/CS5010
 
-## BikeShare Data Analysis comparing pre-covid and post-covid
+## Bike-Sharing: Insight into Public Precautions During the COVID-19 Pandemic
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
 ### Introduction
 
-REQUIRED: Introduction: Describe your project scenario. Starting out, what did you hope to accomplish/learn?
+We wanted to explore how people's social behavior changed with COVID-19, particularly their activity outdoors. The vast majority of public health focus during the pandemic was on behavior indoors. 
 
-We wanted to explore how people's social behavior changed with Covid-19, particularly their activity outdoors. Many cities reported a spike in bicycle sales and bike sharing.  In Chicago “unprecedented demand” (*Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated*). 
+What is the intended audience and what is the best use for our analysis? First, public healthcare officials could use this data to assess whether there has been a spike in leisure biking in the area and whether some of the trails are getting more congested than others. They could use this information to a) disseminate more information on safety precautions for biking outdoors, b) to post safety information posters at the stations that are most frequently used, c) place sanitizing equipment on the most frequent paths. Second, if biking activity has increased on the weekend, road police could consider closing part of the roads less used on the weekend by cars to dedicate them to bike use. 
 
-What is the intended audience and what is the best use for our analysis? First, public healthcare officials could use this data to assess whether there has been a spike in leisure biking in the area and whether some of the trails are getting more congested than others. They could use this information to a) disseminate more information on safety precautions for biking outdoors, b) to post safety information posters at the stations that are most frequently used, c) place sanitizing equipment on the most frequent paths. Second, if biking activity has increased on the weekend, road police could consider closing part of the roads less used on the weekend by cars to dedicate them to bike use.    
+Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  (*Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated*). 
 
 In this project we performed month-to-month comparisons on Capital Bikeshare ridership to show to impact of the pandemic in the DC metro area, ultimately focusing on VA. We focused on the following key questions: 
 
@@ -25,11 +25,15 @@ In this project we performed month-to-month comparisons on Capital Bikeshare rid
 3. Has leaisure-related biking increased versus commuting?
 
 
-### Introducing our DATASET
+### Data set
 
 REQUIRED: The Data: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
 
-Our data is monthly on bike sharing data that provided trip data, by time, starting and ending location and address and ID of the starting and ending location station. In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. We got our dataset from 'Capital Bikshare', from following website: https://www.capitalbikeshare.com/system-data. 
+We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
+
+We downloaded 25 monthly data files.  Each record is a trip from a starting startion to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) for the and end of each trip and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
+
+
 
 In addition, we used public health dataset from: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by region in DC metropolitan area. 
 
