@@ -23,7 +23,7 @@ Our central analytic question is whether bikesharing declined in Virginia relati
 
 Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that our analysis could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
 
-Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at 
+Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at https://drive.google.com/drive/folders/1af62oMJvt0VrC8fkSnE-8pq36EJRhDcc?usp=sharing
 
 ## Data set
 
