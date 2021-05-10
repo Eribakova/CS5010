@@ -1,5 +1,7 @@
 # CS5010 Final Project
 
+## Group 12
+
 Jenny Jang, 
 Carol Moore, 
 Elina Ribakova 
