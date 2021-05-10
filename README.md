@@ -130,12 +130,13 @@ Urban planners could use this information to assess which roads might be closed 
 
 There are a few technical limitations we would overcome with more time.  For example, rather than simply omitting April 2020, we would treat April 2020 as a month with zero bikeshares, and include public health case data for that month.  Doing so would have enabled a greater variety of charts, such as line charts, showing trends and correlations over time.  Second, we would have explored mapping visualizations.
 
-To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
-
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
+To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
-## References
+
+
+# References
 
 In addition to CS5010 class resources we used the following references:
 
