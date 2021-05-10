@@ -1,6 +1,5 @@
-# CS5010 Final Project
+# CS5010 Final Project - Group 12
 
-## Group 12
 
 Jenny Jang, 
 Carol Moore, 
