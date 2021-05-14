@@ -100,10 +100,10 @@ People take longer bike rides suggesting that they are riding bikes more for lei
 
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
-### Trips from recreational sites increased.  
-People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
+### Trips from recreational sites increased relatively.  
+People use stations that are near parks or recreational areas. The top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
-The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also very narrow. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
+The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also very narrow. The number of trips starting from these stations during 2020 was the same as during 2019. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
 
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
@@ -126,11 +126,11 @@ Public health officials could use the data to tailor interventions beyond what t
 
 Urban planners could use this information to assess which roads might be closed on weekends to promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
 
-There are a few technical limitations we would overcome with more time.  For example, rather than simply omitting April 2020, we would treat April 2020 as a month with zero bikeshares, and include public health case data for that month.  Doing so would have enabled a greater variety of charts, such as line charts, showing trends and correlations over time.  Second, we would have explored mapping visualizations.
+There are a few technical limitations we would overcome with more time.  For example, rather than simply omitting April 2020, we would treat April 2020 as a month with zero bikeshares, and include public health case data for that month.  Doing so would have enabled a greater variety of charts, such as line charts, showing trends and correlations over time.  Second, we would have explored mapping visualizations (Figure 10).
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
-To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
+To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This would make it easier for government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns. We would develop an algorithm to identify more stations that are sited on recreational trails as well as those near commuting hubs, enabling us to better distinguish between leisure and work-related use. Finally, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
 # References
 
