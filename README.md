@@ -42,27 +42,29 @@ In order to concatenate the 25 monthly bike share files into a single data set, 
 
 ![image](https://user-images.githubusercontent.com/70774260/117550168-ccfa8b80-b00c-11eb-9731-bbc6930c5a46.png)
 
-
 ![image](https://user-images.githubusercontent.com/70774260/117550185-ed2a4a80-b00c-11eb-85e2-c14fe658900e.png)
 
 ### Cleaning
 
-The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (Figure 3), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
+The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (see example list below), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
-![image](https://user-images.githubusercontent.com/77211862/118332849-b656a780-b4d8-11eb-82a5-eef57cfc9ee9.png)
+>Dunn Loring Metro
+>Fessenden St & Wisconsin Ave NW
+>Shirlington Transit Center / Quincy St & Randolph St
+>Shady Grove Metro West
 
 We used the Python GEOPY library to determine the county, city and state from from which a bike share originated, based on latitude and longitude ("lat/long").  There were several issues which we solved in the following ways.
 
 1.  Lat/long data were missing from all files dated prior to May 2020.  We created a dictionary to map lat/long to each station where data was available, then used the dictionary to fill in lat/long based on station id. Because the stations did not change much, if at all, during our timeframe, this was possible. 
 
-2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with the average lat/long associated with it.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is shown below:
+2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with the average lat/long associated with it.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is:
 
 District of Columbia:  4,892,84
 Virginia:  590,687
 Maryland: 135,035
 NaN: 119,252
 
-Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in the Northern Virginia locales of Arlington County, Alexandria City, Fairfax County, and Fairfax City.  First-look analysis showed no patterns by county or city so we analyzed these DC suburbs as a group.
+Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in the Northern Virginia locales of Arlington County, Alexandria City, Falls Church, and Fairfax County.  First-look analysis showed no patterns by county or city so we analyzed Virginia locales as a group.
 
 ## Experimental Design
 
