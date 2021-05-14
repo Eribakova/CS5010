@@ -102,7 +102,7 @@ People take longer bike rides suggesting that they are riding bikes more for lei
 
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
-### Trips from recreational sites increased relatively.  
+### Trips from recreational sites were relatively more frequent.  
 People use stations that are near parks or recreational areas. The top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
 The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also very narrow. The number of trips starting from these stations during 2020 was the same as during 2019. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
