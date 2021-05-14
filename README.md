@@ -49,7 +49,7 @@ In order to concatenate the 25 monthly bike share files into a single data set, 
 
 The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (Figure 3), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
-![image](https://user-images.githubusercontent.com/77211862/118332133-996da480-b4d7-11eb-9146-dd40d06fa289.png)
+![image](https://user-images.githubusercontent.com/77211862/118332311-e3ef2100-b4d7-11eb-8528-616c4e70c61b.png)
 
 
 We used the Python GEOPY library to determine the county, city and state from from which a bike share originated, based on latitude and longitude ("lat/long").  There were several issues which we solved in the following ways.
