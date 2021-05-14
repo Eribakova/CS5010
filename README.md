@@ -46,9 +46,12 @@ In order to concatenate the 25 monthly bike share files into a single data set, 
 
 ### Cleaning
 
-The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (see example list below), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
+The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state, aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  Examples of locations in raw data are:
 
-Dunn Loring Metro, Fessenden St & Wisconsin Ave NW, Shirlington Transit Center / Quincy St & Randolph St, Shady Grove Metro West
+- Dunn Loring Metro
+- Fessenden St & Wisconsin Ave NW
+- Shirlington Transit Center / Quincy St & Randolph St
+- Shady Grove Metro West
 
 We used the Python GEOPY library to determine the county, city and state from from which a bike share originated, based on latitude and longitude ("lat/long").  There were several issues which we solved in the following ways.
 
@@ -56,10 +59,10 @@ We used the Python GEOPY library to determine the county, city and state from fr
 
 2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with the average lat/long associated with it.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is:
 
-District of Columbia:  4,892,84
-Virginia:  590,687
-Maryland: 135,035
-NaN: 119,252
+- District of Columbia:  4,892,84
+- Virginia:  590,687
+- Maryland: 135,035
+- NaN: 119,252
 
 Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in the Northern Virginia locales of Arlington County, Alexandria City, Falls Church, and Fairfax County.  First-look analysis showed no patterns by county or city so we analyzed Virginia locales as a group.
 
