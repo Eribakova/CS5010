@@ -48,10 +48,10 @@ In order to concatenate the 25 monthly bike share files into a single data set, 
 
 The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (see example list below), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
->Dunn Loring Metro
->Fessenden St & Wisconsin Ave NW
->Shirlington Transit Center / Quincy St & Randolph St
->Shady Grove Metro West
+*Dunn Loring Metro
+*Fessenden St & Wisconsin Ave NW
+*Shirlington Transit Center / Quincy St & Randolph St
+*Shady Grove Metro West
 
 We used the Python GEOPY library to determine the county, city and state from from which a bike share originated, based on latitude and longitude ("lat/long").  There were several issues which we solved in the following ways.
 
