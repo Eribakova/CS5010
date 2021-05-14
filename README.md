@@ -18,19 +18,17 @@ Link to Google Drive with all the Datasets mentioned in the report: https://driv
 
 ## Objectives
 
-This project explores how outdoor activity changed with COVID-19, with a focus on bikesharing.  In the Washington DC area, there were mixed policies about outdoor social gatherings.  Many local parks were closed throughout the summer. However, recreational pathways remained open even where social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to gauge how the public took precautions or increased their risks throughout 2020 to the present. 
+This project explores how outdoor activity changed with COVID-19, with a focus on bikesharing.  In the Washington DC area, there were mixed policies about outdoor gatherings.  Many local parks were closed throughout the summer. However, recreational pathways remained open even where social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to gauge how the public took precautions or increased their risks throughout 2020 to the present. 
 
-Our central analytic question is whether bikesharing declined or increased in Virginia relative to the previous year. Many cities reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if the Washington DC area experienced a similar spike or if public health restrictions and precautions - which reduced tourism and commuting -- caused a net reduction in usage, mitigating the potential risks of biking on narrow paths and on roads.  If the public were consistently taking increased precautions in all aspects of their public behavior we would expect to see bikesharing decrease and for trips to be shorter, especially in more crowded areas.  
+Our central analytic question is whether bikesharing declined or increased in the DC metro area relative to the previous year. Many areas reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if DC experienced a similar spike or if public health restrictions and precautions caused a net reduction in usage.  If the public were consistently taking increased precautions in all aspects of their public behavior - including transportation and recreation - and we would expect bikesharing to decrease and for trips to be shorter, especially in more crowded areas.  
 
-Finally, we hoped to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that this kind of analysis could help tailor the pandemic response regarding bikesharing and other forms of outdoor recreation.
-
-Our Github repository located at is Eribakova/CS5010.  Our data files, which were too large to load up to Github, are located at https://drive.google.com/drive/folders/1af62oMJvt0VrC8fkSnE-8pq36EJRhDcc?usp=sharing
+Finally, we hope to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that this kind of analysis could help tailor a pandemic response regarding bikesharing and other forms of outdoor recreation.
 
 ## Data set
 
 We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
 
-We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude data for bike stations was also provided. 
+We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude of the bike stations was also provided. 
 
 Public health data provided helpful context for understanding bikesharing trends. We obtained epidemiological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by locale in Virginia. These data were merged in with the bikeshare data to complete our file.
 
@@ -49,22 +47,22 @@ In order to concatenate the 25 monthly bike share files into a single data set, 
 
 ### Cleaning
 
-The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike).  The data set had street address information but lacked city and state (Figure 3), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
+The merged dataset included numerous irregularities and missing values that had to be remedied prior to analysis. We eliminated trips with outlying durations spanning multiple days, where likely someone did not return a bike.  The data set had street address information but lacked city and state (Figure 3), aggregates that we believed would be more closely tied to public health regulations and that would be more tractable to work with.  
 
 ![image](https://user-images.githubusercontent.com/70774260/117550233-38445d80-b00d-11eb-8a8e-e16fbdd0184d.png)
 
-We used the Python GEOPY library to extract city and state from the latitude and longitude.  There were several issues which we solved in the following ways.
+We used the Python GEOPY library to determine the county, city and state from from which a bike share originated, based on latitude and longitude ("lat/long").  There were several issues which we solved in the following ways.
 
 1.  Lat/long data were missing from all files dated prior to May 2020.  We created a dictionary to map lat/long to each station where data was available, then used the dictionary to fill in lat/long based on station id. Because the stations did not change much, if at all, during our timeframe, this was possible. 
 
-2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with its average lat/long.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is shown below:
+2.  Lat/long data were not standard, differing greatly in the number of decimal places.  This resulted, for example, in over 48,000 unique lat/longs for fewer than 600 stations in the March 2021 file alone. As a result, and because we were trying to run GEOPY over every observation in the file, the reverse gecode runtime totaled over 3 hours for one month's data.  Our solution was to take the mean lat-long grouped by station id and run GEOPY over a small table that listed each station with the average lat/long associated with it.  Having cleaned and reduced the data, we easily extracted State and city information.  The breakdown of state is shown below:
 
 District of Columbia:  4,892,84
 Virginia:  590,687
 Maryland: 135,035
 NaN: 119,252
 
-Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in Northern Virginia.
+Based on this information we decided to limit the project Virginia only, so that the final dataset consists of 590,687 bikesharing trips that started in the Northern Virginia locales of Arlington County, Alexandria City, Fairfax County, and Fairfax City.  First-look analysis showed no patterns by county or city so we analyzed these DC suburbs as a group.
 
 ## Experimental Design
 
