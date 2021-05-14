@@ -132,7 +132,10 @@ There are a few technical limitations we would overcome with more time.  For exa
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
-To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This would make it easier for government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns. We would develop an algorithm to identify more stations that are sited on recreational trails as well as those near commuting hubs, enabling us to better distinguish between leisure and work-related use. Finally, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
+To increase the utility of this analysis, we would:
+- Develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times. This would make it easier for government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns. 
+- Develop an algorithm to identify more stations that are sited on recreational trails as well as those near commuting hubs, enabling us to better distinguish between leisure and work-related use. 
+- Seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
 # References
 
