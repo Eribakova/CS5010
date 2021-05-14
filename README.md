@@ -68,15 +68,15 @@ Based on this information we decided to limit the project Virginia only, so that
 
 Our approach was to compare bike sharing patterns 'pre-COVID' and 'post-COVID'.  Because bicycling is a seasonal activity we also decided to compare patterns month-by-month - for example, to compare June 2019 (pre-COVID) to June 2020 (post-COVID).  
 
-There are several analytic limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear and diversion away from crowded trails to city streets. Anecdotally, mask wear was not common in DC during outdoor exercise particularly in the summer.  Secondly, Capital Bikeshare made free memberships available to essential workers during 2020, an additional source of demand with unknown implications for overall trip count and patterns of use. Finally, there were no bikeshares in April 2020 during the lockdown and as a result our dataset lacks any data for April.  
+There are several analytic limitations.  First, we don't know how the rider adjusted all aspects of their behavior to reduce risk - e.g., mask wear and diversion away from crowded trails to city streets. Anecdotally, mask wear was not common in DC during outdoor exercise particularly in the summer.  Secondly, Capital Bikeshare offered free memberships to essential workers during 2020, an additional source of demand with unknown implications for overall trip count and patterns of use. Finally, there were no bikeshares in April 2020 during the lockdown and as a result our dataset lacks any data for April.  
 
 We planned four main queries:
 1.  How did the number of monthly trips change in 2020 compared to 2019?
 2.  Did the amount of time spent riding change?
 3.  How did time of day and day of week change?  Do the shifts reflect changes in commuting, leisure, or both?
-4.  Where did trips change?  Is there a locational pattern to the change?
+4.  What stations experienced change?  Is there a locational pattern?
 
-The analysis and visualization code, along with additional visualizations, is in our Jupyter notebook.  An important coding tool was the Pandas 'groupby' method.  We used groupby to aggregate the data and develop monthly, weekly, daily and hourly counts.  The Seaborn library was also important to our analysis.  Seaborn easily makes bar charts that are useful in 'pre-/post-analysis' because the 'hue' keyword enables dimensions beyond the x and y axis.  This feature allowed us to incorporate "year" into the charts, enabling clear year-to-year comparisons.
+The analysis and visualization code, along with additional visualizations, is in our Jupyter notebook.  An important coding tool was the Pandas 'groupby' method.  We used groupby to aggregate the data and develop monthly, weekly, daily and hourly counts.  The Seaborn library was also important to our analysis.  Seaborn easily makes bar charts that are useful in 'pre-/post-analysis' because the 'hue' keyword enables dimensions beyond the x and y axis.  This feature allowed us to highlight patterns by time period.
 
 ## Key results
 
@@ -137,7 +137,7 @@ To increase the utility of this analysis, we would develop a user query interfac
 
 # References
 
-In addition to CS5010 class resources we used the following references:
+In addition to class resources we used the following references:
 
 Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
 
