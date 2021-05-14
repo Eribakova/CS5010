@@ -100,10 +100,10 @@ People take longer bike rides suggesting that they are riding bikes more for lei
 
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
-### Most frequently used stations are near parks.  
+### Trips from recreational sites increased.  
 People use stations that are near parks or recreational areas. Top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
-The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Side routes and adjacent trails are also very narrow. Together, our data suggests a need for increased public health precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
+The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also very narrow. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
 
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
@@ -115,7 +115,6 @@ We use method-based unit testing for our data cleaning part as well as the data 
 * We used assert statements to make sure the groupby split-apply-combine result was as intended (note that this approach yields no output if the statement is True) - examples in Figure 9.
 
 ![image](https://user-images.githubusercontent.com/70774260/117549451-755a2100-b008-11eb-8d02-80fb248964ce.png)
-
 
 ## Conclusions
 
@@ -132,8 +131,6 @@ There are a few technical limitations we would overcome with more time.  For exa
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
 To increase the utility of this analysis, we would develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times of day or hour. This way it will be easier for public sector government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns on risks using shared resources outdoors during COVID-19. In addition, we would seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
-
-
 
 # References
 
