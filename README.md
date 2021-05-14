@@ -81,7 +81,7 @@ The analysis and visualization code, along with additional visualizations, is in
 ## Key results
 
 ### Bike sharing usage us down during COVID-19.
-It is not surprising, that bike sharing fell throughout 2020 due to COVID-19. As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions even before official lockdowns were introduced, since trips were lower in February than January 2020. 
+Bike sharing was comparatively low in 2020 due to COVID-19 (Figure 4). As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions during the uncertain weeks before lockdowns before Virginia's lockdown, since trips were lower in February than January 2020. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117549581-37113180-b009-11eb-8da3-1cbdb78c3b52.png)
 
