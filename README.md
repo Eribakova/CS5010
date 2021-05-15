@@ -83,35 +83,35 @@ The analysis and visualization code, along with additional visualizations, is in
 ## Key results
 
 ### Bike sharing usage us down during COVID-19.
-Bike sharing was comparatively low in 2020 due to COVID-19 (Figure 4). As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions during the uncertain weeks before lockdowns before Virginia's lockdown, since trips were lower in February than January 2020. 
+Bike sharing was comparatively low in 2020 due to COVID-19 (Figure 3). As infections picked up and lockdowns were announced, bike sharing dropped off and failed to pick up to the pre-COVID levels even by the end of 2020. It is notable that data suggests that people began taking precautions during the uncertain weeks before before Virginia's lockdown, since trips were lower in February than January 2020. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117549581-37113180-b009-11eb-8da3-1cbdb78c3b52.png)
 
 ### Bike sharing during commuting hours is sharply down.
-Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure.  Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
+Trips for 2020 as a whole shifted from commuting hours to what seems to be leisure hours (afternoons and evenings). However, the change did not occur immediately. Trips were down throughout the day in March 2020 compared to March 2019.  However, there were still a lot of trips during commuting hours. By June, commuting hour trips were much lower than in 2019 and late afternoon trips were up. The finding seems to suggest that after the lockdowns in April, more people might have settled into working from home, but continued to use bike share, this time for leisure.  Our display (Figure 4) shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
 
 ![image](https://user-images.githubusercontent.com/70774260/117549626-7b043680-b009-11eb-9f79-b39dab864536.png)
 
 ### Weekend trips are up.
-The shift towards bike sharing for leisure away from commuting is also confirmed by our results by day of the week. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. Our display below shows March and June 2020; visualizations in our Jupyter Notebook confirm the trend continued after June.
+Results by day of the week also suggest an increase in recreational use and a decrease in commuting use. While total number of trips is still well below pre-COVID-19 levels, the share of weekend trips has picked up meaningfully. In March 2020 trips were way down every day of the week. By June, there were ~500 more weekend trips than in 2019. Finally, by 2021, Saturday trips appear to have fully caught up with pre-COVID-19 levels. Our display (Figure 5) shows March and June 2020; other visualizations confirm the trend continued after June.
 
 ![image](https://user-images.githubusercontent.com/70774260/117549786-5197da80-b00a-11eb-9d30-f5e559121ef0.png)
 
 ### Duration of trips has increased.  
-People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. The distribution of duration by time of day is showin in Figure 7.
+People take longer bike rides suggesting that they are riding bikes more for leisure or extended personal use rather than commuting to or from work. The distribution of duration by time of day is showin in Figure 6.
 
 ![image](https://user-images.githubusercontent.com/70774260/117549978-89535200-b00b-11eb-9782-f3e3658bb504.png)
 
 ### Trips from recreational sites were relatively more frequent.  
-People use stations that are near parks or recreational areas. The top 20 most used stations have changed markedly after the start of the pandemic (Figure 8). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
+People use stations that are near parks or recreational areas. The top 20 most used stations have changed markedly after the start of the pandemic (Figure 7). This can be particularly useful for health care officials to decide where to dedicate resources of information campaigns on COVID-19 safety (for example posters) or safety equipment as it is not possible, neither cost effective to place these quickly in all possible bike sharing locations. 
 
-The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a narrow path on which maintaining 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also very narrow. The number of trips starting from these stations during 2020 was the same as during 2019. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year.
+The popular rental sites, Gravelly Point and Roosevelt Island are on the Mount Vernon Trail, a 6-foot wide path on which maintaining the CDC's recommended 6 foot social distancing is not possible.  Popular side routes and adjacent trails are also narrow. The number of trips starting from these stations during 2020 was the same as during 2019. Together, our data suggests a need for increased public health educaton and precautions governing outdoor recreational sites during popular leisure hours, especially given bikesharing was even higher on weekends during the pandemic than during the prior year. 
 
 ![image](https://user-images.githubusercontent.com/70774260/117550102-5cec0580-b00c-11eb-8e40-51a5b32499e6.png)
 
 ## Testing of our program 
 
-We use method-based unit testing for our data cleaning part as well as the data analysis part. We are incorporating our testing into our Jupiter notebook code. We focused mostly on assert tests that our data transformation and aggregation in the process of cleaning and preparing the dataset produces the expected results in the final clean dataset. Below are a few examples of the tests we performed. 
+We use method-based unit testing for our data cleaning as well as the data analysis. Below are a few examples of the tests we performed. 
 * We checked that our lat/long information is correctly matched to stations where it was missing (earlier part of the data sample). 
 * We recalculated the duration of the trip and made sure it is correctly reflected in our dataset. 
 * We used assert statements to make sure the groupby split-apply-combine result was as intended (note that this approach yields no output if the statement is True) - examples in Figure 9.
@@ -120,22 +120,21 @@ We use method-based unit testing for our data cleaning part as well as the data 
 
 ## Conclusions
 
-We used high frequency information on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on VA specifically. We found that the overall usage of bike sharing has dropped off significantly as the rate of infections picked up. It appears that the use began to fall off already in February, even before the official lockdowns, possibly as people began taking precautions ahead of the official announcements.    
+We used high frequency data on bike sharing before and after the onset of COVID-19 in DC metropolitan area, focusing on Northern Virginia specifically. We found that the overall usage of bike sharing dropped off significantly as the rate of infections picked up. It appears that the use began to fall off in February, even before the official lockdowns, possibly due to people reacting to news accounts ahead of the official announcements.    However, after the Virginia's lockdown ended in early May, bike sharing continued its seasonal increase even as deaths and hospitalizations escalated, and surpassed the previous year during non-commuting hours and on weekends.  
 
-However, after the Virginia's complete lockdown ended in early May, bike sharing continued its seasonal increase even as deaths and hospitalizations escalated, and surpassed the previous year during non-commuting hours and on weekends.  People took longer trips and trips originating from recreational areas also picked up.  Based on this pattern, we concluded that leisure oriented trips increased and substituted for work-related rentals.
+Public health officials could the data to tailor interventions beyond what the vendor is already doing (sanitizing high-contact parts of the equipment after use). These could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing the value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. 
 
-Public health officials could use the data to tailor interventions beyond what the vendor is already doing (sanitizing high-contact parts of the equipment after use). These could include posting safety information posters at the bikesharing stations that are most frequently used, requiring a review of social distancing guidelines as part of the terms of the rental, emphasizing the value of mask wear for outdoor recreation, or limiting rentals where social distancing is not possible. 
+Urban planners could use this information to assess where and when roads might be closed promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
 
-Urban planners could use this information to assess which roads might be closed on weekends to promote fitness and recreation, to enable more social distancing than is possible on trails.  By monitoring frequency of trips during certain days or hours of the day, they can adjust road closures, particularly on the weekends, to relieve bike congestion on crowded paths where social distancing is difficult if not impossible. 
+There are a few technical limitations we would overcome with more time.  For example, rather than simply omitting April 2020, we would treat April 2020 as a month with zero bikeshares, and include public health case data for that month.  Doing so would have enabled a greater variety of analyses, such as line charts showing correlations between public health events and bike shares.  
 
-There are a few technical limitations we would overcome with more time.  For example, rather than simply omitting April 2020, we would treat April 2020 as a month with zero bikeshares, and include public health case data for that month.  Doing so would have enabled a greater variety of charts, such as line charts, showing trends and correlations over time.  Second, we would have explored mapping visualizations (Figure 10).
+To increase the utility of this analysis, we would:
+- Develop a user query interface with mapping functionality to show the most frequently used stations by time of day and day of the week. This would make it easier for government officials to assess when and where to dedicate more resources to public education campaigns. 
+- Develop an algorithm to identify more stations that are sited on recreational trails those near commuting hubs.  This enable us to better distinguish between leisure and work-related use. 
+- Seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
 ![image](https://user-images.githubusercontent.com/70774260/117548484-442b2200-b003-11eb-8f06-c2fb24eadbf0.png)
 
-To increase the utility of this analysis, we would:
-- Develop a user query interface with mapping functionality, where we can see on a map the most frequently used stations during different times. This would make it easier for government officials to assess when and where to dedicate more resources to bike sharing and public education campaigns. 
-- Develop an algorithm to identify more stations that are sited on recreational trails as well as those near commuting hubs, enabling us to better distinguish between leisure and work-related use. 
-- Seek additional data on essential workers who took advantage of Capital Bikeshare's free membership program, first to assess the potential impact of the program and also to separate those trips from what appear to be leisure trips.  
 
 # References
 
