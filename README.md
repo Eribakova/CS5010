@@ -136,8 +136,6 @@ To increase the utility of this analysis, we would:
 
 # References
 
-In addition to class resources we used the following references:
-
 Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
 
 Kapp, Amy, "Here’s the Latest Expert Guidance on Outdoor Activity and COVID-19," Rails to Trails Conservancy blog post, April 18, 2020, https://www.railstotrails.org/trailblog/2020/april/18/here-s-the-latest-expert-guidance-on-outdoor-activity-and-covid-19/
