@@ -12,7 +12,7 @@ Datacleaning_Final.ipynb and Analysis_Final.ipynb
 
 Link to Google Drive with all the Datasets mentioned in the report: https://drive.google.com/drive/folders/1af62oMJvt0VrC8fkSnE-8pq36EJRhDcc?usp=sharing
 
-# Bike-Sharing: Insight into Public Precautions During the COVID-19 Pandemic
+# Bikesharing: Insight into Public Precautions During the COVID-19 Pandemic
 
 <img src="https://github.com/Eribakova/CS5010/blob/main/Bike.PNG">
 
