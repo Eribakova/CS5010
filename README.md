@@ -1,6 +1,5 @@
 # CS5010 Final Project - Group 12
 
-
 Jenny Jang, 
 Carol Moore, 
 Elina Ribakova 
@@ -18,19 +17,19 @@ Link to Google Drive with all the Datasets mentioned in the report: https://driv
 
 ## Objectives
 
-This project explores how outdoor activity changed with COVID-19, with a focus on bikesharing.  In the Washington DC area, there were mixed policies about outdoor gatherings.  Many local parks were closed throughout the summer. However, recreational pathways remained open even where social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating. We examined the public's use of rental bikes to gauge how the public took precautions or increased their risks throughout 2020 to the present. 
+This project explores how outdoor activity changed with COVID-19, with a focus on bikesharing.  In the Washington DC area, there were mixed policies about outdoor gatherings.  Many local parks were closed throughout the summer. However, recreational pathways remained accessible even where 6-foot social distancing was difficult if not impossible, and the major DC area trails remained crowded and even broke weekend records for usage in March 2020 as cases were escalating [1]. We examined the public's use of rental bikes to gauge how the public took precautions or increased their risks throughout 2020 to the present. 
 
-Our central analytic question is whether bikesharing declined or increased in the DC metro area relative to the previous year. Many areas reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system.  We wanted to see if DC experienced a similar spike or if public health restrictions and precautions caused a net reduction in usage.  If the public were consistently taking increased precautions in all aspects of their public behavior - including transportation and recreation - and we would expect bikesharing to decrease and for trips to be shorter, especially in more crowded areas.  
+Our central analytic question is whether bikesharing declined or increased in the DC metro area relative to the previous year. Many areas reported a spike in bicycle sales and bike sharing. For example, Chicago reported “unprecedented demand” in its bike-sharing system [2].  We wanted to see if DC experienced a similar spike or if public health restrictions and precautions caused a net reduction in usage.  If the public were consistently taking increased precautions in all aspects of their public behavior - including transportation and recreation - and we would expect bikesharing to decrease and for trips to be shorter, especially in more crowded areas.  The CDC's recommended guideline for social distancing of 6 feet was reiterated by outdoor recreation advocates (see, e.g., [3]).
 
 Finally, we hope to explore how an analysis like this, if expanded, could be used in urban planning, transportation, and public health policies.  Briefly, we conclude that this kind of analysis could help tailor a pandemic response regarding bikesharing and other forms of outdoor recreation.
 
 ## Data set
 
-We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data. 
+We used Capital Bikeshare’s Trip History dataset which is licensed for public use by Motivate, the company that operates Capital Bike share on behalf of Washington, DC area municipalities.  Capital Bikeshare maintains over 4,300 bikes across DC, Maryland and Northern Virginia and is the dominant bike sharing company in the region.  The data are available at https://www.capitalbikeshare.com/system-data [4]. 
 
 We downloaded 25 monthly data files from February 2019 to March 2021, the most recent file available.  Each record is a trip from a starting kiosk, or station, to an end station.  Data fields include starting and ending station address, a date-timestamp (year-month-day-hour-minute-second) and the type of renter, e.g., casual or membership.  In the most recent part of the dataset, longitude and latitude of the bike stations was also provided. 
 
-Public health data provided helpful context for understanding bikesharing trends. We obtained epidemiological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr. The dataset provided information on hospitalizations and mortality rates by locale in Virginia. These data were merged in with the bikeshare data to complete our file.
+Public health data provided helpful context for understanding bikesharing trends. We obtained epidemiological data from https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr [5]. The dataset provided information on hospitalizations and mortality rates by locale in Virginia. These data were merged in with the bikeshare data to complete our file.
 
 ## Data Pipeline
 
@@ -136,15 +135,19 @@ To increase the utility of this analysis, we would:
 
 # References
 
-Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
+#### Cited
 
-Kapp, Amy, "Here’s the Latest Expert Guidance on Outdoor Activity and COVID-19," Rails to Trails Conservancy blog post, April 18, 2020, https://www.railstotrails.org/trailblog/2020/april/18/here-s-the-latest-expert-guidance-on-outdoor-activity-and-covid-19/
+[1] Dunbar, Harry, "How to Avoid Crowded Trails During COVID-19", BikeArlington blog post, April 24, 2020. https://www.bikearlington.com/how-to-avoid-crowded-trails-during-covid-19/
 
-Dunbar, Harry, "How to Avoid Crowded Trails During COVID-19", BikeArlington blog post, April 24, 2020. https://www.bikearlington.com/how-to-avoid-crowded-trails-during-covid-19/
+[2] Kapp, Amy, "Here’s the Latest Expert Guidance on Outdoor Activity and COVID-19," Rails to Trails Conservancy blog post, April 18, 2020, https://www.railstotrails.org/trailblog/2020/april/18/here-s-the-latest-expert-guidance-on-outdoor-activity-and-covid-19/
 
-Data license agreement.  https://www.capitalbikeshare.com/data-license-agreement
+[3] Chicago Metropolitan Agency for Planning (CMAP), "Pandemic presents opportunity for communities to embrace biking and walking," website post, undated).https://www.cmap.illinois.gov/updates/all/-/asset_publisher/UIMfSLnFfMB6/content/pandemic-presents-opportunity
 
-Commonwealth of Virginia, "Virginia Open Data Portal:  VDH-COVID-19-PublicUseDataset-Cases", website, https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr
+[4] Data license agreement.  https://www.capitalbikeshare.com/data-license-agreement
+
+[5] Commonwealth of Virginia, "Virginia Open Data Portal:  VDH-COVID-19-PublicUseDataset-Cases", website, https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Cases/bre9-aqqr
+
+#### General
 
 https://dtkaplan.github.io/DataComputingEbook/index.html#table-of-contents
 
